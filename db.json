@@ -1,0 +1,37 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "name": "Test project",
+      "description": "Project description"
+    },
+    {
+      "name": "sss",
+      "description": "sss",
+      "id": 3
+    },
+    {
+      "name": "Test project",
+      "description": "Project d",
+      "id": 4
+    },
+    {
+      "name": "test",
+      "description": "dd",
+      "id": 5
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "login": "johndoe",
+      "password": "test",
+      "firstname": "John",
+      "lastname": "Doe",
+      "permission": "admin"
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
