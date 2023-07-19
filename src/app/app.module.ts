@@ -16,11 +16,15 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { MatTableModule } from '@angular/material/table';
+import { FunctionalityListComponent } from './functionality-list/functionality-list.component';
+import { ProjectListComponent } from './project-list/project-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ProjectAddEditComponent
+    ProjectAddEditComponent,
+    FunctionalityListComponent,
+    ProjectListComponent
   ],
   imports: [
     BrowserModule,
