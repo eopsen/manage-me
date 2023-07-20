@@ -1,0 +1,61 @@
+<mat-toolbar>
+  <span>Manage me</span>
+  <span class="toolbar-spacer"></span>
+  <button mat-raised-button color="primary">
+    Add task
+  </button>
+</mat-toolbar>
+
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>{{ projectObj?.name}}</mat-card-title>
+    <mat-card-subtitle>Project</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <p>{{ projectObj?.description }}</p>
+  </mat-card-content>
+</mat-card>
+<br>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>{{ functionalityObj?.name}}</mat-card-title>
+    <mat-card-subtitle>Functionality</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <p>{{ functionalityObj?.description}}</p>
+
+    <div>State: {{ functionalityObj?.state}}</div>
+    <div>Owner: {{ functionalityObj?.owner}}</div>
+    <div>Priority: {{ functionalityObj?.priority}}</div>
+  </mat-card-content>
+</mat-card>
+<br>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>TODO</mat-card-title>
+    <mat-card-subtitle>Tasks</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    GRID
+  </mat-card-content>
+</mat-card>
+<br>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>DOING</mat-card-title>
+    <mat-card-subtitle>Tasks</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    GRID
+  </mat-card-content>
+</mat-card>
+<br>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>DONE</mat-card-title>
+    <mat-card-subtitle>Tasks</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    GRID
+  </mat-card-content>
+</mat-card>

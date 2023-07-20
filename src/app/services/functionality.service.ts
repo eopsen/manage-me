@@ -24,6 +24,9 @@ export class FunctionalityService {
     return this._http.get('http://localhost:3000/functionalities');
   }
 
+  getFunctionality(id: string): Observable<any> {
+    return this._http.get(`http://localhost:3000/functionalities/${id}`);
+  }
   deleteFunctionality(id: number): Observable<any> {
     return this._http.delete(`http://localhost:3000/functionalities/${id}`);
   }

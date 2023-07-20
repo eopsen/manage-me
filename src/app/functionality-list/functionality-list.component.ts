@@ -79,7 +79,7 @@ export class FunctionalityListComponent implements OnInit {
   }
 
   navigateToTasks(row: any) {
-    this._router.navigate(['/tasks']);
+    this._router.navigate([`/functionality/${row.id}`]);
   }
 
   getSelectedProject() {

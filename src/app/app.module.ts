@@ -20,6 +20,8 @@ import { FunctionalityListComponent } from './functionality-list/functionality-l
 import { ProjectListComponent } from './project-list/project-list.component';
 import { FunctionalityAddEditComponent } from './functionality-add-edit/functionality-add-edit.component';
 import { MatSelectModule } from '@angular/material/select';
+import { FunctionalityDetailComponent } from './functionality-detail/functionality-detail.component';
+import { MatCardModule } from '@angular/material/card';
 
 
 @NgModule({
@@ -28,7 +30,8 @@ import { MatSelectModule } from '@angular/material/select';
     ProjectAddEditComponent,
     FunctionalityListComponent,
     ProjectListComponent,
-    FunctionalityAddEditComponent
+    FunctionalityAddEditComponent,
+    FunctionalityDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -43,7 +46,8 @@ import { MatSelectModule } from '@angular/material/select';
     ReactiveFormsModule,
     HttpClientModule,
     MatTableModule,
-    MatSelectModule
+    MatSelectModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
