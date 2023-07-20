@@ -23,6 +23,10 @@ export class TaskKanbanComponent implements OnInit {
   projectId: string;
 
   ngOnInit(): void {
+    this.loadTasks();
+  }
+
+  loadTasks() {
     this._taskService.getProjectTasks(this.projectId).subscribe({
       next: (res) => {
         this.todo = res.filter((obj) => { return obj.state === 'TODO' });
@@ -33,9 +37,7 @@ export class TaskKanbanComponent implements OnInit {
         console.log(err);
       }
     })
-    this.todo
   }
-
   constructor(
     private _taskService: TaskService,
     private _route: ActivatedRoute,
@@ -62,8 +64,16 @@ export class TaskKanbanComponent implements OnInit {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
     } else {
       const taskId = event.previousContainer.data[event.previousIndex].id;
-      var data = event.previousContainer.data[event.previousIndex];
+      let data = event.previousContainer.data[event.previousIndex];
       data.state = stateToSet;
+
+      if (stateToSet == 'DOING') {
+        data.startTime = (new Date()).toISOString();
+      }
+
+      if (stateToSet == 'DONE') {
+        data.endTime = (new Date()).toISOString();
+      }
 
       this._taskService.updateTask(taskId, data).subscribe({
         next: (res) => {
