@@ -1,5 +1,7 @@
 <mat-toolbar>
   <span>Manage me</span>
+  <button mat-raised-button class="projects-btn" (click)="navigateToProjects()">Projects</button>
+  <button mat-raised-button class="back-btn" (click)="navigateBack()">Back</button>
   <span class="toolbar-spacer"></span>
   <button mat-raised-button color="primary" (click)="openAddTaskForm()">
     Add task

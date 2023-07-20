@@ -1,5 +1,6 @@
 <mat-toolbar>
   <span>Manage me</span>
+  <button mat-raised-button class="projects-btn" (click)="navigateToProjects()">Projects</button>
   <span class="toolbar-spacer"></span>
   <button mat-raised-button color="primary" (click)="openAddFunctionalityForm()">
     Add functionality
@@ -43,7 +44,8 @@
   <ng-container matColumnDef="action">
     <th mat-header-cell *matHeaderCellDef> Actions </th>
     <td mat-cell *matCellDef="let element">
-      <button mat-raised-button color="primary" class="raised-button" (click)="navigateToTasks(element)"> Tasks</button>
+      <button mat-raised-button color="primary" class="raised-button" (click)="navigateToTasks(element)"> Manage
+        Tasks</button>
       <button mat-icon-button (click)="openEditFunctionalityForm(element)">
         <mat-icon>edit</mat-icon>
       </button>

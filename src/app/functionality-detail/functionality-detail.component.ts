@@ -132,4 +132,12 @@ export class FunctionalityDetailComponent implements OnInit {
         },
       });
   }
+
+  navigateToProjects() {
+    this._router.navigate(['/projects']);
+  }
+
+  navigateBack() {
+    this._router.navigate([`/project/${this.projectObj.id}`]);
+  }
 }

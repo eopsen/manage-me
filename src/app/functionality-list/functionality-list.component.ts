@@ -115,4 +115,8 @@ export class FunctionalityListComponent implements OnInit {
       });
     }
   }
+
+  navigateToProjects() {
+    this._router.navigate(['/projects']);
+  }
 }
