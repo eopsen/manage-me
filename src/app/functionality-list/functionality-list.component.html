@@ -43,7 +43,7 @@
   <ng-container matColumnDef="action">
     <th mat-header-cell *matHeaderCellDef> Actions </th>
     <td mat-cell *matCellDef="let element">
-      <button mat-raised-button color="primary" (click)="navigateToTasks(element)"> Tasks</button>
+      <button mat-raised-button color="primary" class="raised-button" (click)="navigateToTasks(element)"> Tasks</button>
       <button mat-icon-button (click)="openEditFunctionalityForm(element)">
         <mat-icon>edit</mat-icon>
       </button>

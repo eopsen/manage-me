@@ -25,7 +25,8 @@ import { MatCardModule } from '@angular/material/card';
 import { TaskAddEditComponent } from './task-add-edit/task-add-edit.component';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
-
+import { TaskKanbanComponent } from './task-kanban/task-kanban.component';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,7 +35,8 @@ import { MatNativeDateModule } from '@angular/material/core';
     ProjectListComponent,
     FunctionalityAddEditComponent,
     FunctionalityDetailComponent,
-    TaskAddEditComponent
+    TaskAddEditComponent,
+    TaskKanbanComponent
   ],
   imports: [
     BrowserModule,
@@ -52,7 +54,8 @@ import { MatNativeDateModule } from '@angular/material/core';
     MatSelectModule,
     MatCardModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    DragDropModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -22,16 +22,16 @@ export class TaskService {
     return this._http.get<Task[]>('http://localhost:3000/tasks');
   }
 
-  getProjectTasks(projectId: string): Observable<any> {
-    return this._http.get(`http://localhost:3000/tasks?projectId=${projectId}`);
+  getProjectTasks(projectId: string): Observable<Task[]> {
+    return this._http.get<Task[]>(`http://localhost:3000/tasks?projectId=${projectId}`);
   }
 
   getFunctionalityTasks(functionalityId: string): Observable<Task[]> {
     return this._http.get<Task[]>(`http://localhost:3000/tasks?functionalityId=${functionalityId}`);
   }
 
-  getTask(id: string): Observable<any> {
-    return this._http.get(`http://localhost:3000/tasks/${id}`);
+  getTask(id: number): Observable<Task> {
+    return this._http.get<Task>(`http://localhost:3000/tasks/${id}`);
   }
   deleteTask(id: number): Observable<any> {
     return this._http.delete(`http://localhost:3000/tasks/${id}`);
