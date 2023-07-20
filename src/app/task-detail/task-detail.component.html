@@ -1,0 +1,16 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>{{taskObj.name}}</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <p>{{taskObj.description}}</p>
+    <div>Priority: {{taskObj.priority}}</div>
+    <div>State: {{taskObj.state}}</div>
+    <div>Project: {{projectObj?.name}}</div>
+    <div>Functionality: {{functionalityObj?.name}}</div>
+    <div>Expected end: {{taskObj.expectedEnd | date}}</div>
+    <div>Created date: {{taskObj.createdDate | date : 'short'}}</div>
+    <div>Start time: {{taskObj.startTime | date : 'short'}}</div>
+    <div>End time: {{taskObj.endTime | date : 'short'}}</div>
+  </mat-card-content>
+</mat-card>

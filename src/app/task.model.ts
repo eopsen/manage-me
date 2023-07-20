@@ -9,4 +9,5 @@ export interface Task {
   startTime: string,
   endTime: string,
   createdDate: string,
+  priority: string
 }

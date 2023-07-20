@@ -12,6 +12,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Task } from '../task.model';
 import { FunctionalityService } from '../services/functionality.service';
 import { state } from '@angular/animations';
+import { MatDialog } from '@angular/material/dialog';
+import TaskDetailComponent from '../task-detail/task-detail.component';
 
 @Component({
   selector: 'app-task-kanban',
@@ -23,6 +25,18 @@ export class TaskKanbanComponent implements OnInit {
   inprogress: Task[];
   done: Task[];
   projectId: string;
+
+  constructor(
+    private _taskService: TaskService,
+    private _functionalityService: FunctionalityService,
+    private _route: ActivatedRoute,
+    private _router: Router,
+    private _dialog: MatDialog) {
+    this.projectId = this._route.snapshot.paramMap.get('id') ?? '';
+    this.todo = [];
+    this.inprogress = [];
+    this.done = [];
+  }
 
   ngOnInit(): void {
     this.loadTasks();
@@ -39,16 +53,6 @@ export class TaskKanbanComponent implements OnInit {
         console.log(err);
       }
     })
-  }
-  constructor(
-    private _taskService: TaskService,
-    private _functionalityService: FunctionalityService,
-    private _route: ActivatedRoute,
-    private _router: Router) {
-    this.projectId = this._route.snapshot.paramMap.get('id') ?? '';
-    this.todo = [];
-    this.inprogress = [];
-    this.done = [];
   }
 
   dropOnTodoList(event: CdkDragDrop<Task[]>) {
@@ -98,6 +102,8 @@ export class TaskKanbanComponent implements OnInit {
 
   showTaskDetail(taskObj: Task) {
     console.log(taskObj);
+    this._dialog
+      .open(TaskDetailComponent, { data: taskObj })
   }
 
   navigateToProjects() {

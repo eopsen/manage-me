@@ -27,6 +27,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { TaskKanbanComponent } from './task-kanban/task-kanban.component';
 import { DragDropModule } from '@angular/cdk/drag-drop';
+import TaskDetailComponent from './task-detail/task-detail.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,7 +37,8 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     FunctionalityAddEditComponent,
     FunctionalityDetailComponent,
     TaskAddEditComponent,
-    TaskKanbanComponent
+    TaskKanbanComponent,
+    TaskDetailComponent
   ],
   imports: [
     BrowserModule,
