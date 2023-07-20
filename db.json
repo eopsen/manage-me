@@ -98,5 +98,33 @@
       "projectId": "5",
       "id": 8
     }
+  ],
+  "tasks": [
+    {
+      "name": "asdf",
+      "description": "asdf",
+      "priority": "low",
+      "expectedEnd": "2023-07-27T22:00:00.000Z",
+      "state": "TODO",
+      "projectId": 1,
+      "functionalityId": "2",
+      "startTime": "",
+      "endTime": "",
+      "createdDate": "2023-07-20T13:20:52.778Z",
+      "id": 3
+    },
+    {
+      "name": "",
+      "description": "",
+      "priority": "low",
+      "expectedEnd": "",
+      "state": "TODO",
+      "projectId": 1,
+      "functionalityId": "2",
+      "startTime": "",
+      "endTime": "",
+      "createdDate": "2023-07-20T13:25:02.500Z",
+      "id": 4
+    }
   ]
 }

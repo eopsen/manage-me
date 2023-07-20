@@ -22,7 +22,9 @@ import { FunctionalityAddEditComponent } from './functionality-add-edit/function
 import { MatSelectModule } from '@angular/material/select';
 import { FunctionalityDetailComponent } from './functionality-detail/functionality-detail.component';
 import { MatCardModule } from '@angular/material/card';
-
+import { TaskAddEditComponent } from './task-add-edit/task-add-edit.component';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,8 @@ import { MatCardModule } from '@angular/material/card';
     FunctionalityListComponent,
     ProjectListComponent,
     FunctionalityAddEditComponent,
-    FunctionalityDetailComponent
+    FunctionalityDetailComponent,
+    TaskAddEditComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +50,9 @@ import { MatCardModule } from '@angular/material/card';
     HttpClientModule,
     MatTableModule,
     MatSelectModule,
-    MatCardModule
+    MatCardModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   providers: [],
   bootstrap: [AppComponent]
