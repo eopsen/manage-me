@@ -66,6 +66,6 @@ export class ProjectListComponent {
   }
 
   navigateToFunctionality(row: any) {
-    this._router.navigate([`/functionalities/${row.id}`]);
+    this._router.navigate([`/project/${row.id}`]);
   }
 }
