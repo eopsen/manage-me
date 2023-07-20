@@ -33,5 +33,61 @@
   ],
   "profile": {
     "name": "typicode"
-  }
+  },
+  "functionalities": [
+    {
+      "name": "zcv",
+      "description": "vczcvz",
+      "priority": "medium",
+      "owner": "John doe",
+      "state": "TODO",
+      "projectId": "1",
+      "id": 2
+    },
+    {
+      "name": "sdfadsf",
+      "description": "p1",
+      "priority": "low",
+      "owner": "John doe",
+      "state": "TODO",
+      "projectId": "1",
+      "id": 3
+    },
+    {
+      "name": "fsdf adsf",
+      "description": "p1",
+      "priority": "low",
+      "owner": "John doe",
+      "state": "TODO",
+      "projectId": "1",
+      "id": 4
+    },
+    {
+      "name": "asdasdsda",
+      "description": "p1",
+      "priority": "low",
+      "owner": "John doe",
+      "state": "TODO",
+      "projectId": "1",
+      "id": 5
+    },
+    {
+      "name": "dafsdf",
+      "description": "p4",
+      "priority": "low",
+      "owner": "John doe",
+      "state": "TODO",
+      "projectId": "4",
+      "id": 6
+    },
+    {
+      "name": "proj 4",
+      "description": "p4",
+      "priority": "low",
+      "owner": "John doe",
+      "state": "TODO",
+      "projectId": "4",
+      "id": 7
+    }
+  ]
 }

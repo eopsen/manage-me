@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
 import { ProjectAddEditComponent } from '../project-add-edit/project-add-edit.component';
@@ -66,7 +66,6 @@ export class ProjectListComponent {
   }
 
   navigateToFunctionality(row: any) {
-    console.log(row);
-    this._router.navigate(['/functionalities']);
+    this._router.navigate([`/functionalities/${row.id}`]);
   }
 }

@@ -21,6 +21,10 @@ export class ProjectService {
     return this._http.get('http://localhost:3000/projects');
   }
 
+  getProject(id: number): Observable<any> {
+    return this._http.get(`http://localhost:3000/projects/${id}`);
+  }
+
   deleteProject(id: number): Observable<any> {
     return this._http.delete(`http://localhost:3000/projects/${id}`);
   }

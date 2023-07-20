@@ -18,13 +18,17 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatTableModule } from '@angular/material/table';
 import { FunctionalityListComponent } from './functionality-list/functionality-list.component';
 import { ProjectListComponent } from './project-list/project-list.component';
+import { FunctionalityAddEditComponent } from './functionality-add-edit/functionality-add-edit.component';
+import { MatSelectModule } from '@angular/material/select';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     ProjectAddEditComponent,
     FunctionalityListComponent,
-    ProjectListComponent
+    ProjectListComponent,
+    FunctionalityAddEditComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +42,8 @@ import { ProjectListComponent } from './project-list/project-list.component';
     MatInputModule,
     ReactiveFormsModule,
     HttpClientModule,
-    MatTableModule
+    MatTableModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]
