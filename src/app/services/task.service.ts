@@ -26,7 +26,7 @@ export class TaskService {
     return this._http.get<Task[]>(`http://localhost:3000/tasks?projectId=${projectId}`);
   }
 
-  getFunctionalityTasks(functionalityId: string): Observable<Task[]> {
+  getFunctionalityTasks(functionalityId: number): Observable<Task[]> {
     return this._http.get<Task[]>(`http://localhost:3000/tasks?functionalityId=${functionalityId}`);
   }
 

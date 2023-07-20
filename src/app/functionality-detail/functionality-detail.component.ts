@@ -37,7 +37,7 @@ export class FunctionalityDetailComponent implements OnInit {
   }
 
   getSelectedFunctionality() {
-    this._functionalityService.getFunctionality(this.functionalityId).subscribe({
+    this._functionalityService.getFunctionality(Number(this.functionalityId)).subscribe({
       next: (res) => {
         this.functionalityObj = res;
         this.getProject(res.projectId);
@@ -60,7 +60,7 @@ export class FunctionalityDetailComponent implements OnInit {
   }
 
   getFunctionalityTasksList() {
-    this._taskService.getFunctionalityTasks(this.functionalityId).subscribe({
+    this._taskService.getFunctionalityTasks(Number(this.functionalityId)).subscribe({
       next: (res) => {
         this.tasksTODO = new MatTableDataSource(res.filter((obj) => { return obj.state === 'TODO' }));
         this.tasksDOING = new MatTableDataSource(res.filter((obj) => { return obj.state === 'DOING' }));

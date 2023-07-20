@@ -10,6 +10,8 @@ import {
 import { TaskService } from '../services/task.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Task } from '../task.model';
+import { FunctionalityService } from '../services/functionality.service';
+import { state } from '@angular/animations';
 
 @Component({
   selector: 'app-task-kanban',
@@ -40,6 +42,7 @@ export class TaskKanbanComponent implements OnInit {
   }
   constructor(
     private _taskService: TaskService,
+    private _functionalityService: FunctionalityService,
     private _route: ActivatedRoute,
     private _router: Router) {
     this.projectId = this._route.snapshot.paramMap.get('id') ?? '';
@@ -83,6 +86,8 @@ export class TaskKanbanComponent implements OnInit {
             event.previousIndex,
             event.currentIndex,
           );
+
+          this.updateFunctionalityState(data);
         },
         error: (err) => {
           console.log(err);
@@ -97,5 +102,45 @@ export class TaskKanbanComponent implements OnInit {
 
   navigateToProjects() {
     this._router.navigate(['/projects']);
+  }
+
+
+  updateFunctionalityState(taskObj: Task) {
+    this._taskService.getFunctionalityTasks(taskObj.functionalityId).subscribe({
+      next: (res) => {
+        let allIsDone = res.every((t) => { return t.state == 'DONE' });
+
+        if (allIsDone) {
+          this.setFunctionalityState(taskObj.functionalityId, 'DONE');
+        } else {
+          let allIsTodo = res.every((t) => { return t.state == 'TODO' });
+
+          if (allIsTodo) {
+            this.setFunctionalityState(taskObj.functionalityId, 'TODO');
+          } else {
+            this.setFunctionalityState(taskObj.functionalityId, 'DOING');
+          }
+        }
+      },
+      error: (err) => {
+
+      }
+    });
+  }
+
+  setFunctionalityState(functionalityId: number, state: string) {
+    this._functionalityService.getFunctionality(functionalityId).subscribe({
+      next: (res) => {
+        res.state = state;
+        this._functionalityService.updateFunctionality(functionalityId, res).subscribe({
+          error: (err) => {
+            console.log(err);
+          }
+        })
+      },
+      error: (err) => {
+        console.log(err);
+      }
+    })
   }
 }
